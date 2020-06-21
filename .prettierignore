@@ -1,0 +1,23 @@
+
+# General
+build
+dist
+es
+html
+lib
+node_modules
+ts
+umd
+
+# Components
+**/*.map
+**/*.js
+
+# Examples
+**/examples/**
+
+# Yarn
+**/.yarn/**
+
+# Code coverage reports
+coverage/**
