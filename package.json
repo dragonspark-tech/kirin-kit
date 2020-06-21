@@ -1,0 +1,63 @@
+{
+  "name": "kirin-kit",
+  "version": "0.0.0",
+  "description": "🛠 A little framework for creating beautiful CLI applications.",
+  "repository": "git@github.com:dragonspark-tech/kirin-kit.git",
+  "author": "DragonSpark Labs <labs@dragonspark.tech> (https://labs.dragonspark.tech)",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=v12.18.1",
+    "yarn": ">=1.22.4"
+  },
+  "private": true,
+  "bugs": {
+    "email": "labs@dragonspark.tech",
+    "url": "https://github.com/dragonspark-tech/kirin-kit/issues"
+  },
+  "homepage": "https://github.com/dragonspark-tech/kirin-kit",
+  "keywords": [
+    "dragonspark",
+    "kirin",
+    "cli"
+  ],
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna run build --stream --prefix --npm-client yarn",
+    "ci-test": "knapsack-pro-jest --config=jest.config.js --coverage",
+    "clean": "lerna run clean --prefix --parallel --npm-client yarn",
+    "clean:project": "lerna run clean:project --prefix --parallel --npm-client yarn",
+    "format": "prettier --write '**/*.{js,md,ts}' '!**/{build,es,lib,umd}'",
+    "format:diff": "prettier --list-different '**/*.{js,md,ts}' '!**/{build,es,lib,umd}'",
+    "lint": "eslint --fix",
+    "lint:docs": "alex '**/*.md' -q",
+    "test": "jest --passWithNoTests --verbose",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "yarn run type-check -- --watch"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^9.0.1",
+    "@commitlint/config-conventional": "^9.0.1",
+    "@knapsack-pro/jest": "^2.7.0",
+    "@rollup/plugin-commonjs": "^13.0.0",
+    "@rollup/plugin-node-resolve": "^8.0.1",
+    "@types/jest": "^26.0.0",
+    "@types/node": "^14.0.13",
+    "@typescript-eslint/eslint-plugin": "^3.3.0",
+    "@typescript-eslint/parser": "^3.3.0",
+    "@wessberg/rollup-plugin-ts": "^1.2.25",
+    "alex": "^8.1.1",
+    "eslint": "^7.3.0",
+    "husky": "^4.2.5",
+    "jest": "^26.0.1",
+    "lerna": "^3.22.1",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.17.1",
+    "ts-jest": "^26.1.0",
+    "typescript": "^3.9.5"
+  }
+}
